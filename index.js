@@ -13,7 +13,7 @@ server.on('connection', function(connection) {
 
     if(message.type == 'pass') {
       if(message.data == pass) {
-        let query = { type: 'verify', data: { result: "success", gift: '98965739715632' } }
+        let query = { type: 'verify', data: { result: "success", gift: config.gift } }
         connection.send(JSON.stringify(query));
       } else {
         let query = { type: 'verify', data: { result: "fail" } }
